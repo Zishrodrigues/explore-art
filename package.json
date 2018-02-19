@@ -1,0 +1,19 @@
+{
+  "name": "explore-art",
+  "version": "0.0.1",
+  "description": "explore-painting-in-vr",
+  "repository": {
+    "type": "git",
+    "url": "https://zishrodrigues@github.com/Zishrodrigues/explore-art.git"
+  },
+  "keywords": [
+    "painting",
+    "art",
+    "webvr"
+  ],
+  "author": "Zish Rodrigues",
+  "license": "MIT",
+  "dependencies": {
+    "aframe": "^0.7.1"
+  }
+}
