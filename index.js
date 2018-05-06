@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
     res.render('pages/index');
 });
 
-var server = app.listen(1337, function () {
-  console.log('server running on port 1337');
+var server = app.listen(process.env.PORT || 5000, function () {
+  console.log('server running on port 5000');
 });
 
