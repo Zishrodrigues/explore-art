@@ -9,6 +9,10 @@ app.get('/', function (req, res) {
     res.render('pages/index');
 });
 
+app.get('/room', function (req, res) {
+  res.render('pages/room');
+});
+
 var server = app.listen(process.env.PORT || 5000, function () {
   console.log('server running on port 5000');
 });

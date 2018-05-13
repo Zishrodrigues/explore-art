@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Explore Art</title>
+    <script src="/js/aframe.min.js"></script>
+    <script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-camera position="0 0 0 0">
+        <a-cursor
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 300"
+          geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.025"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          raycaster="objects: a-box"
+          fuse="true"
+          ></a-cursor>
+      </a-camera>
+
+      <!-- plant -->
+      <a-entity io3d-furniture="id:8c4c4d48-dc51-4371-876a-09d51f10b66b" position="-3.5 0 -3"></a-entity>
+
+      <a-text font="kelsonsans" color="green" value="Welkom bij het Viertaal College schilderij ervaring" width="6" position="-4 3 -3" rotation="0 15 0"></a-text>
+      <a-image rotation="0 90 0" position="3 2 0" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Hendrick_Avercamp_-_Winterlandschap_met_schaatsers_bij_de_stad_Kampen.jpg"></a-image>
+    </a-scene>
+
+    <script src="/js/app.min.js"></script>
+  </body>
+</html>
