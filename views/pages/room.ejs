@@ -3,7 +3,9 @@
   <head>
     <title>Explore Art</title>
     <script src="/js/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
     <script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"></script>
+    <script src="/js/app.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -18,14 +20,27 @@
           fuse="true"
           ></a-cursor>
       </a-camera>
-
+      <a-box id="chair1Pointer" position="0 0 -4" rotation="0 180 0" color="orange" material="opacity: 0"
+      move-persona="on: click; target: a-camera; position: 0 0.9 -4; triggeredEvent: chairEvent; rotation: 0 180 0;"
+      ></a-box>
+      <a-entity id="chair1" io3d-furniture="id:feae7b9c-4385-4742-8f92-e08f3201a20f" position="0 0 -4" rotation="0 0 0"></a-entity>
       <!-- plant -->
       <a-entity io3d-furniture="id:8c4c4d48-dc51-4371-876a-09d51f10b66b" position="-3.5 0 -3"></a-entity>
 
-      <a-text font="kelsonsans" color="green" value="Welkom bij het Viertaal College schilderij ervaring" width="6" position="-4 3 -3" rotation="0 15 0"></a-text>
-      <a-image rotation="0 90 0" position="3 2 0" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Hendrick_Avercamp_-_Winterlandschap_met_schaatsers_bij_de_stad_Kampen.jpg"></a-image>
+      <a-text font="kelsonsans" color="green" value="Welkom bij het Viertaal College schilderij ervaring. Kijk naar de stoel om te beginnen." width="6" position="-4 3 -3" rotation="0 15 0"></a-text>
+      <a-box position="3 2 0.6" rotation="0 180 0" color="green" material="opacity: 1"
+      redirect="on: click; triggeredEvent: redirectEvent;"
+      ></a-box>
+      <a-image rotation="0 0 0" position="3 2 0" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Hendrick_Avercamp_-_Winterlandschap_met_schaatsers_bij_de_stad_Kampen.jpg"></a-image>
     </a-scene>
+    <script>
+  	document.addEventListener("chairEvent", function(event) {
+      console.log('WORKSS');
+    });
 
-    <script src="/js/app.min.js"></script>
+    document.addEventListener("redirectEvent", function(event) {
+      window.location = '/';
+    });
+    </script>
   </body>
 </html>
