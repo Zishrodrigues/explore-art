@@ -32,13 +32,19 @@
       <a-text id="mainText" font="kelsonsans" color="green" value="Welkom bij het Viertaal College schilderij ervaring. Kijk naar de stoel om te beginnen." width="6" position="-4 3 -4" rotation="0 15 0"></a-text>
 
       <!-- CHOOSE BLOCKS -->
+      <a-text class="roomOnly chooseBlock" width="6" position="4 3 0" rotation="0 180 0" font="kelsonsans" color="green" value="Kijk naar een block om een schilderij te kiezen"></a-text>
       <a-box class="roomOnly chooseBlock" position="1 2 0.6" rotation="0 180 0" color="green" material="opacity: 1"
       redirect="on: click; triggeredEvent: paintingChosenEvent;"
       ></a-box>
       <a-image class="roomOnly chooseBlock" rotation="0 0 0" position="1 2 0" src="/images/winterlandschap.jpg"></a-image>
 
+      <a-box class="roomOnly chooseBlock" position="2.5 2 0.6" rotation="0 180 0" color="green" material="opacity: 1"
+      redirect="on: click; triggeredEvent: paintingChosenEvent;"
+      ></a-box>
+      <a-image class="roomOnly chooseBlock" rotation="0 0 0" position="2.5 2 0" src="/images/winterlandschap.jpg"></a-image>
+
       <!-- FIND IMAGE EXPLAINED -->
-      <a-text class="roomOnly gameExplain"  opacity="0" width="6" position="4 3 0" rotation="0 180 0" font="kelsonsans" color="green" value="Zoek het paard en wagen in het schilderij!"></a-text>
+      <a-text class="roomOnly gameExplain"  opacity="0" width="6" position="4 3 0" rotation="0 180 0" font="kelsonsans" color="green" value="Zoek dit paard en de slee in het schilderij!"></a-text>
       <a-image class="roomOnly gameExplain" opacity="0" rotation="0 0 0" position="1 2 0" src="/images/game.jpg"></a-image>
       <a-text class="roomOnly gameExplain"  opacity="0" width="6" position="3.5 0.5 0" rotation="0 180 0" font="kelsonsans" color="green" value="Kijk naar het oog om te beginnen"></a-text>
 
@@ -48,7 +54,7 @@
       <a-image class="roomOnly gameExplain" opacity="0" rotation="0 0 0" position="-1 2 0" src="/images/lookicon.jpg"></a-image>
 
       <!-- PAINTING SCENE -->
-      <a-text class="roomOnly gameExplain found"  opacity="0" width="10" position="-10 1 -8" rotation="0 90 0" font="kelsonsans" color="green" value="Goed gedaan!"></a-text>
+      <a-text class="roomOnly gameExplain found"  opacity="0" width="15" position="-10 1 -8" rotation="0 60 0" font="kelsonsans" color="white" value="Goed gedaan!"></a-text>
       <a-box class="paintingShow" opacity="0" position="-10 -1 -8" rotation="0 90 0" width="6" height="4" color="green" 
       redirect="on: click; triggeredEvent: foundHorse;"
       ></a-box>
