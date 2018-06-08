@@ -38,9 +38,19 @@
       <a-image class="roomOnly chooseBlock" rotation="0 0 0" position="1 2 0" src="/images/winterlandschap.jpg"></a-image>
 
       <!-- FIND IMAGE EXPLAINED -->
-      <a-text class="roomOnly gameExplain"  opacity="0" width="6" position="4 3 0" rotation="0 180 0" font="kelsonsans" color="green" value="Zoek het paard en wagen in de schilderij!"></a-text>
+      <a-text class="roomOnly gameExplain"  opacity="0" width="6" position="4 3 0" rotation="0 180 0" font="kelsonsans" color="green" value="Zoek het paard en wagen in het schilderij!"></a-text>
       <a-image class="roomOnly gameExplain" opacity="0" rotation="0 0 0" position="1 2 0" src="/images/game.jpg"></a-image>
+      <a-text class="roomOnly gameExplain"  opacity="0" width="6" position="3.5 0.5 0" rotation="0 180 0" font="kelsonsans" color="green" value="Kijk naar het oog om te beginnen"></a-text>
 
+      <a-box class="roomOnly gameExplain" opacity="0" position="-1 2 0.6" rotation="0 180 0" color="green" 
+      redirect="on: click; triggeredEvent: paintingEvent;"
+      ></a-box>
+      <a-image class="roomOnly gameExplain" opacity="0" rotation="0 0 0" position="-1 2 0" src="/images/lookicon.jpg"></a-image>
+
+      <!-- PAINTING SCENE -->
+      <a-box class="paintingShow" opacity="0" position="-1 2 0.6" rotation="0 180 0" color="green" 
+      redirect="on: click; triggeredEvent: paintingEvent;"
+      ></a-box>
       <a-sky id="paintingSky" opacity="0" src="/images/winterlandschap.jpg" rotation="0 90 0"></a-sky>
     </a-scene>
     <script>
@@ -55,6 +65,7 @@
 
     document.addEventListener("paintingEvent", function(event) {
       $('#paintingSky').attr('opacity', '1');
+      $('.paintingShow').attr('opacity', '1');
       $('.roomOnly').attr('opacity', '0');
       $('#plant').remove();
     });
