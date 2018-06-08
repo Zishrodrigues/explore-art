@@ -7,6 +7,7 @@
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
     <script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"></script>
     <script src="/js/app.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
   <body>
     <a-scene>
@@ -29,16 +30,26 @@
       <a-entity id="plant" io3d-furniture="id:8c4c4d48-dc51-4371-876a-09d51f10b66b" position="-3.5 0 -4"></a-entity>
 
       <a-text id="mainText" font="kelsonsans" color="green" value="Welkom bij het Viertaal College schilderij ervaring. Kijk naar de stoel om te beginnen." width="6" position="-4 3 -4" rotation="0 15 0"></a-text>
-      <a-box class="roomOnly" position="1 2 0.6" rotation="0 180 0" color="green" material="opacity: 1"
-      redirect="on: click; triggeredEvent: paintingEvent;"
-      ></a-box>
-      <a-image class="roomOnly" rotation="0 0 0" position="1 2 0" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Hendrick_Avercamp_-_Winterlandschap_met_schaatsers_bij_de_stad_Kampen.jpg"></a-image>
 
-      <a-sky id="paintingSky" opacity="0" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Hendrick_Avercamp_-_Winterlandschap_met_schaatsers_bij_de_stad_Kampen.jpg" rotation="0 90 0"></a-sky>
+      <!-- CHOOSE BLOCKS -->
+      <a-box class="roomOnly chooseBlock" position="1 2 0.6" rotation="0 180 0" color="green" material="opacity: 1"
+      redirect="on: click; triggeredEvent: paintingChosenEvent;"
+      ></a-box>
+      <a-image class="roomOnly chooseBlock" rotation="0 0 0" position="1 2 0" src="/images/winterlandschap.jpg"></a-image>
+
+      <!-- FIND IMAGE EXPLAINED -->
+      <a-image class="roomOnly gameExplain" opacity="0" rotation="0 0 0" position="1 2 0" src="/images/game.jpg"></a-image>
+
+      <a-sky id="paintingSky" opacity="0" src="/images/winterlandschap.jpg" rotation="0 90 0"></a-sky>
     </a-scene>
     <script>
   	document.addEventListener("chairEvent", function(event) {
       $('#mainText').attr('opacity', '0');
+    });
+
+    document.addEventListener("paintingChosenEvent", function(event) {
+      $('.gameExplain').attr('opacity', '1');
+      $('.chooseBlock').attr('opacity', '0');
     });
 
     document.addEventListener("paintingEvent", function(event) {
