@@ -5,6 +5,7 @@ Project for Communication and Multimedia Design.
 ### Installing locally
 
 Using the following steps you can install and use the app locally.
+Prototype version 1.0.0
 
 #### Cloning or downloading the repo
 
