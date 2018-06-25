@@ -1,6 +1,6 @@
 {
   "name": "explore-art",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "explore-painting-in-vr",
   "scripts": {
     "start": "nodemon index.js"
